@@ -1,12 +1,12 @@
 # Feature extraction in medical image for classify Patients with Tourettes Syndrome
 
 ## Purpose
-This repository contains the trained models and scripts used for our paper titled "Detecting Tourette’s Syndrome in Anatomical Regions of the Brain through MRI Analysis and Naive Bayes Classifier" and "Adding Dimensionality Reduction analysis of Texture descriptors for Tourette’s Syndrome classification". Our work focuses on utilizing texture feature to classify Tourette's Syndrome using classfication via machine learning (ML).
+This repository contains the trained models and scripts used for our paper titled "Detecting Tourette’s Syndrome in Anatomical Regions of the Brain through MRI Analysis and Naive Bayes Classifier" and "Adding Dimensionality Reduction analysis of Texture descriptors for Tourette’s Syndrome classification". Our work focuses on utilizing texture feature using classfication via machine learning (ML).
 
 ## Directory Structure
 - `models/`
-  - Contains the Generate descriptor Matrix, descriptor and classify models for two different architectures: Support Vector Machine(SVM) and Navie Bayes(NB).
-  - Each architecture has two different dataset: `TS group` and 'Normal Control group'
+  - Contains the Generate descriptor Matrix, descriptor and classify models for two different architectures: 'Support Vector Machine(SVM)' and 'Navie Bayes(NB)'.
+  - Each architecture has two different dataset: `TS_group` and 'Normal_control'
   - The models are emplemented in scikit-learn library.
 
 ## Descriptors
