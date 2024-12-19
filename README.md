@@ -11,35 +11,35 @@ This repository contains the trained models and scripts used for our paper title
 
 ## Descriptors
 The descriptors provided in this repository are named as follows:
-- Grey Level Co-ocurrence Matrix (GLCM)
-- Gray Level Run Length Matrix (GLRLM)
-- Gray Level Size Zone Matrix (GLSZM)
-- Neighbouring Gray Tone Difference Matrix (NGDTM)
+- `Grey Level Co-ocurrence Matrix (GLCM)`
+- `Gray Level Run Length Matrix (GLRLM)`
+- `Gray Level Size Zone Matrix (GLSZM)`
+- `Neighbouring Gray Tone Difference Matrix (NGDTM)`
 
 ## Usage
 To use these models for feature extraction or classify, please follow the instructions below.
 
-Binary Matrix Generation:
+- `Binary Matrix Generation:`
 
-Script: Binary_Matrix_and_start_descriptor.py
-Purpose: Converts brain segmentation DICOM or NIfTI files into binary matrices.
-Output: Binary matrix representing individual brain regions for further processing.
-Texture Feature Extraction:
+-Script: Binary_Matrix_and_start_descriptor.py
+-Purpose: Converts brain segmentation DICOM or NIfTI files into binary matrices.
+-Output: Binary matrix representing individual brain regions for further processing.
+-Texture Feature Extraction:
 
-Script: Generate_Descriptor_Matrix.py
-Purpose: Extracts texture features from the binary matrices.
-Output: Descriptor matrix containing texture characteristics of each brain region.
-Classification:
+`Script: Generate_Descriptor_Matrix.py`
+-Purpose: Extracts texture features from the binary matrices.
+-Output: Descriptor matrix containing texture characteristics of each brain region.
+-Classification:
 
-Scripts:
-Naive_Bayes_Classifier.py
-SVM_Classifier.py
-Purpose: Applies machine learning techniques to classify brain regions using the texture features.
-Results Analysis and Visualization:
+`Scripts:
+Naive_Bayes_Classifier.py` or
+`SVM_Classifier.py`
+-Purpose: Applies machine learning techniques to classify brain regions using the texture features.
+-Results Analysis and Visualization:
 
-Script: Graph_results.py
-Purpose: Performs graph-based analysis and visualizes classification outcomes.
-Output: Structured and interpretable visualization of classification results.
+`Script: Graph_results.py`
+-Purpose: Performs graph-based analysis and visualizes classification outcomes.
+-Output: Structured and interpretable visualization of classification results.
 
 ### Loading Models
 
