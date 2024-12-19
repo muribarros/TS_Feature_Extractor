@@ -6,7 +6,7 @@ This repository contains the trained models and scripts used for our paper title
 ## Directory Structure
 - `models/`
   - Contains the Generate descriptor Matrix, descriptor and classify models for two different architectures: 'Support Vector Machine(SVM)' and 'Navie Bayes(NB)'.
-  - Each architecture has two different dataset: `TS_group` and 'Normal_control'
+  - Each architecture has two different dataset: `TS_group and 'Normal_control'
   - The models are emplemented in scikit-learn library.
 
 ## Descriptors
