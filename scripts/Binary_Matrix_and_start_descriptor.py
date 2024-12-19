@@ -38,7 +38,7 @@ with open('register_list.txt', 'r') as f:
     print(patients)
 
 #-------------------------------------
-# CONDIÇÃO (Todas as regiões em todos os pacientes (for pacientes + for regiões))
+# Condition (All regions in all patients (for pacientes + for regiões))
 #-------------------------------------
 
 #patients = patients[0:10]
@@ -77,7 +77,7 @@ for patient in patients:
         #print("dataDir, relative path", dataDir)
         #print("dataDir, absolute path", os.path.abspath(dataDir))
 
-#Leitura da Imagem e Mascara
+#Image and mask read
 
        # img = os.path.join('n1_fMRI')
        # mask = os.path.join('data')
