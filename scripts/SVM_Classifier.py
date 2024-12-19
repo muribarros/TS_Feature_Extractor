@@ -3,10 +3,9 @@
 #-------------------------------------//--------------------------------------
 
 #----------------------
-# BIBLIOTECA
+# Import
 #----------------------
 
-# Imports
 from sklearn.datasets import make_blobs
 from sklearn.model_selection import train_test_split
 import numpy as np
@@ -27,18 +26,18 @@ ids_df = pd.read_csv('id_region.csv', sep = ';')
 gt_label = np.ones(68)
 gt_label[0:34] = gt_label[0:34] * 0
 
-lista = []
+list = []
 
-for regiao in regioes:
-    #(original)matriz = np.load('/Users/Lab/Documents/Murilo/Matriz_GLCM_RMs/Matriz_' + str(regiao) + '.npy')
-    matriz = np.load('/Users/Lab/Documents/Murilo/'+ tech +'_'+ mod + '_Matriz/Matriz_' + str(regiao) + '.npy')
+for region in regions:
+    #(original)matriz = np.load('/Users/Lab/Documents/Murilo/Matriz_GLCM_RMs/Matriz_' + str(region) + '.npy')
+    matriz = np.load('/Users/Lab/Documents/Murilo/'+ tech +'_'+ mod + '_Matriz/Matriz_' + str(region) + '.npy')
     if comZscore:
         scaler.fit(matriz)
         matriz = scaler.transform(matriz)
     
     #print(matriz.shape)# Initialize SVM classifier
     clf = svm.SVC(kernel='linear')
-    #print(regiao)
+    #print(region)
 # Fit data
     clf = clf.fit(matriz, gt_label)   
 # Predict the test set
@@ -53,13 +52,13 @@ for regiao in regioes:
     f1= 2*((precision*recall)/(precision+recall))
     #print('F1 score: %f' % f1)
     #print('%d,%f,%f,%f,%f' % (regiao, accuracy, precision, recall, f1)) 
-    lista.append([int(regiao), accuracy, precision, recall, f1])
+    list.append([int(region), accuracy, precision, recall, f1])
 
-results = np.asarray(lista)
+results = np.asarray(list)
 
 results_df = pd.DataFrame(results)
 results_df.columns = ['Region', 'accuracy', 'precision', 'recall', 'f1']
 ids_df = ids_df.merge(results_df, how='left', on='Region')
 ids_df = ids_df.sort_values(by='Region')
 
-ids_df.to_csv('SVM_' + tech + '_' + mod + '_' + str(comZscore)+ '.csv')
+ids_df.to_csv('SVM_' + tech + '_' + mod + '_' + str(withZscore)+ '.csv')
