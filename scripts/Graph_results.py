@@ -3,26 +3,24 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-
-
-lista = []
+list = []
 
 techs  = ['glcm_RMf_True','glcm_RMf_False','glcm_RMs_True','glcm_RMs_False','glrlm_RMf_True','glrlm_RMf_False','glrlm_RMs_True','glrlm_RMs_False','glszm_RMf_True','glszm_RMf_False','glszm_RMs_True','glszm_RMs_False','ngtdm_RMf_True','ngtdm_RMf_False','ngtdm_RMs_True','ngtdm_RMs_False']
 classif = 'SVM'
 
-#for classif in ['SVM','NB']: #Classificador 
-img = pd.read_csv(classif + '_regiao_de_interesse.csv', sep=';')    
+#for classif in ['SVM','NB']: #Classify
+img = pd.read_csv(classif + '_rerion_of_interess.csv', sep=';')    
 rois=img['Name'].tolist()
 classif_matriz = np.zeros((len(techs),len(img))) 
     
-for i, tech in enumerate(techs): #Tecnicas 
+for i, tech in enumerate(techs): #Tecniques 
     img2 = pd.read_csv(classif+'_'+tech+'.csv', sep = ';')
     img2 = img2.sort_values(by='accuracy')
-    regiao_ordenada=img2['Name'].tolist()
+    region_ordenaded=img2['Name'].tolist()
     print(classif+'_'+tech+'.csv')
-    for j, roi in enumerate(rois): #Regioes
-        #print(regiao_ordenada.index(roi))
-        classif_matriz[i,j] = regiao_ordenada.index(roi)
+    for j, roi in enumerate(rois): #regions
+        #print(region_ordenaded.index(roi))
+        classif_matriz[i,j] = region_ordenaded.index(roi)
 #region = ['a_','b_','c_','d_','e_']
 #tech = ['t_1','t_2','t_3','t_4']
 
