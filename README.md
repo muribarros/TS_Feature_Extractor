@@ -1,81 +1,30 @@
-# Enhancing Tourette's Syndrome Classification via Cortico-Striatal-Thalamic-Cortical Circuit Segmentation and Convolutional Neural Networks
+# Detecting Tourette’s Syndrome in Anatomical Regions of the Brain through MRI Analysis and Naive Bayes Classifier
 
 ## Purpose
-This repository contains the trained models and scripts used for our paper titled "Enhancing Tourette's Syndrome Classification via Cortico-Striatal-Thalamic-Cortical Circuit Segmentation and Convolutional Neural Networks". Our work focuses on utilizing convolutional neural networks (CNNs) to classify Tourette's Syndrome using various brain segmentation techniques.
+This repository contains the trained models and scripts used for our paper titled "Detecting Tourette’s Syndrome in Anatomical Regions of the Brain through MRI Analysis and Naive Bayes Classifier". Our work focuses on utilizing texture feature to classify Tourette's Syndrome using classfication via machine learning (ML).
 
 ## Directory Structure
 - `models/`
-  - Contains the trained models for three different architectures: VGG16, VGG19, and ResNet50.
-  - Each architecture has three different styles: `WholeBrain`, `Slant`, and `DKT`.
-  - The models are saved in Keras format with the following files:
-    - `keras_metadata.pb`
-    - `saved_model.pb`
-    - `variables/`
-  - Due to file size constraints on GitHub, our models can be downloaded using the link: https://drive.google.com/drive/folders/1CpbNOLKkAmGd4gPskwe4fPs8nnvwMeFv?usp=sharing 
-- `scripts/`
-  - Contains the scripts used during training. We employed the python scripts using SLURMs. The models were trained using Weights and Biases, please refer to their official website for further information
-    - `run_monai.py`: This scripts run our codes without W&B.
-    - `run_monai_wandb.py`: This scripts run our codes with W&B.
-    - `gpu_batch_2D.sh`: Main script responsible for running the python codes.
-## Models
-The models provided in this repository are named as follows:
-- `WholeBrain_VGG16`
-- `WholeBrain_VGG19`
-- `WholeBrain_ResNet50`
-- `Slant_VGG16`
-- `Slant_VGG19`
-- `Slant_ResNet50`
-- `DKT_VGG16`
-- `DKT_VGG19`
-- `DKT_ResNet50`
+  - Contains the Generate descriptor Matrix, descriptor and classify models for two different architectures: Support Vector Machine(SVM) and Navie Bayes(NB).
+  - Each architecture has two different dataset: `TS group` and 'Normal Control group'
+  - The models are emplemented in scikit-learn library.
+
+## Descriptors
+The descriptors provided in this repository are named as follows:
+- Grey Level Co-ocurrence Matrix (GLCM)
+- Gray Level Run Length Matrix (GLRLM)
+- Gray Level Size Zone Matrix (GLSZM)
+- Neighbouring Gray Tone Difference Matrix (NGDTM)
 
 ## Usage
 To use these models for transfer learning or inference, please follow the instructions below.
 
 ### Loading Models
-You can load the models using Keras. Below is a Python script to load a model and use it for transfer learning.
-
-```python
-import tensorflow as tf
-from tensorflow.keras.models import load_model
-
-def load_keras_model(model_name):
-    model_path = f'models/{model_name}'
-    model = tf.keras.models.load_model(model_path)
-    return model
-
-def print_model_summary(model):
-    model.summary()
-
-def transfer_learning_example(model):
-    # Freezing the layers except the last 4 layers
-    for layer in model.layers[:-4]:
-        layer.trainable = False
-    
-    # Adding custom layers for transfer learning
-    x = model.output
-    x = tf.keras.layers.GlobalAveragePooling2D()(x)
-    x = tf.keras.layers.Dense(1024, activation='relu')(x)
-    predictions = tf.keras.layers.Dense(1, activation='sigmoid')(x)
-
-    # Creating the final model
-    model_final = tf.keras.models.Model(inputs=model.input, outputs=predictions)
-    
-    # Compile the model
-    model_final.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
-
-    return model_final
-
-if __name__ == "__main__":
-    model_name = 'vgg16_whole_brain'  # Example model name
-    model = load_keras_model(model_name)
-    print_model_summary(model)
-    model_final = transfer_learning_example(model)
-    print_model_summary(model_final)
-```
 
 ## Running the Script
-Ensure you have TensorFlow installed: pip install tensorflow
+Ensure you have Sklearn installed: pip install scikit-learn
+SVM: pip install svm
+NB: pip install naive-bayes
 
 Run the script: python load_model.py
 
