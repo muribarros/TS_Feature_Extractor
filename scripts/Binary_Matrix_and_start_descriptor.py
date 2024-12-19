@@ -1,12 +1,12 @@
 #-------------------------------------//---------------------------------------
 #-----------------------------------------------------------------------------
-#                  MATRIZ BINARIA E EXTRAÇÃO DE CARACTERISTICA  
+#                 BINARY MATRIX AND FEATURE EXTRACTION
 #-----------------------------------------------------------------------------
 #-------------------------------------//--------------------------------------
 
 
 #-------------------------------------
-# BIBLIOTECA 
+# Import 
 #-------------------------------------
 
 import nibabel as nib
@@ -20,33 +20,33 @@ from radiomics import glcm
 import nrrd
 
 #-------------------------------------
-# LEITURA .NPY
+# Read Brain intersection list
 #-------------------------------------
 
-regioes = np.load('Lista_final_interseccao.npy')    
+regioes = np.load('Brain_intersection_list.npy')    
 
-#savemat("/Users/Lab/Documents/Murilo/GLCM/" "all_regions_nodes.mat",{"regioes":regioes})    
+#savemat("/Users/Lab/Documents/Murilo/GLCM/" "all_regions_nodes.mat",{"regions":regions})    
 
 #-------------------------------------
-#LISTA DE PACIENTES (.txt)
+# Patients list (.txt)
 #-------------------------------------
 
-with open('lista_registro.txt', 'r') as f:
-    pacientes = [[str(entry) 
+with open('register_list.txt', 'r') as f:
+    patients = [[str(entry) 
                   for entry in line.split()] 
                  for line in f.readlines()]
-    print(pacientes)
+    print(patients)
 
 #-------------------------------------
 # CONDIÇÃO (Todas as regiões em todos os pacientes (for pacientes + for regiões))
 #-------------------------------------
 
-#pacientes = pacientes[0:10]
+#patients = patients[0:10]
 
-for paciente in pacientes:
+for patient in patients:
     
     
-    #paciente[0] = 'N8' 
+    #patient[0] = 'N8' 
     wherefMRI = '/Users/Lab/Documents/Murilo/DataSet_ST_sMRI/'+ paciente[0] + '/orig.nii.gz'
     n1_fMRI = nib.load (wherefMRI) 
     n1_fMRI = n1_fMRI.get_fdata()  
@@ -61,15 +61,15 @@ for paciente in pacientes:
     img2 = img.get_data()
 
     
-    for regiao in regioes:
+    for region in regions:
         data = img2.copy()
-        data = (data==regiao)*1
+        data = (data==region)*1
         nrrd.write('regiao.nrrd', data)
         #print('---------------------------------------------------------------------------------------2')
-        print(paciente[0] + ' - ' + str(regiao))
+        print(patient[0] + ' - ' + str(region))
 
 #-------------------------------------
-# GLCM
+# Grey Level Co-occurence Matrix (GLCM)
 #-------------------------------------   
 
         #dataDir = os.path.join(os.getcwd(), '/Users/Lab/Documents/Murilo/GLCM/'+ paciente[0])
@@ -87,7 +87,7 @@ for paciente in pacientes:
         
        # print ('Parameter file, absolute path', os.path.abspath(paramPath))
 
-#Extração de caracteristicas
+#Feature Extraction
 
         extractor = featureextractor.RadiomicsFeatureExtractor()
 
@@ -96,7 +96,7 @@ for paciente in pacientes:
         #print('Enabled filters:\n\t', extractor.enabledImagetypes)
         #print('Enabled features:\n\t', extractor.enabledFeatures)
 
-#Resultado
+#Results
         
         result = extractor.execute('smri.nrrd', 'regiao.nrrd')
         
@@ -104,7 +104,7 @@ for paciente in pacientes:
         #print('')
         #print('Calculated features')
         
-        lista = [] #Criar lista vazia
+        lista = [] #Create list
         
         for key, value in result.items():
            if '_glrlm' in key:
