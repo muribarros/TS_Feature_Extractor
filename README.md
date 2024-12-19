@@ -17,7 +17,7 @@ The descriptors provided in this repository are named as follows:
 - `Neighbouring Gray Tone Difference Matrix (NGDTM)`
 
 ## Usage
-To use these models for feature extraction or classify, please follow the instructions below.
+To use these models for feature extraction or classify, please follow the instructions below, step-by-step.
 
 - `Binary Matrix Generation:/`
     -Script: Binary_Matrix_and_start_descriptor.py
@@ -43,11 +43,9 @@ To use these models for feature extraction or classify, please follow the instru
 
 ## Running the Script
 Ensure you have Sklearn installed: pip install scikit-learn
-SVM: pip install svm
-NB: pip install naive-bayes
-
-Run the script: python load_model.py
-
+- `SVM: pip install svm`
+- `NB: pip install naive-bayes`
+- 
 ## License
 
 This repository is licensed under the MIT License.
