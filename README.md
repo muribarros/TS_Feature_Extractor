@@ -19,15 +19,27 @@ The descriptors provided in this repository are named as follows:
 ## Usage
 To use these models for feature extraction or classify, please follow the instructions below.
 
-The algorithm Binary_Matrix_and_start_descriptor.py is employed to generate a binary matrix from a brain segmentation DICOM or NIfTI file. This process results in a binary matrix representing individual brain regions, which can be used for feature extraction in subsequent steps.
+Binary Matrix Generation:
 
-Following this, the Generate_Descriptor_Matrix.py script is applied to the binary matrices produced by the previous step. This script performs texture feature extraction from the binary matrices, creating a descriptor matrix that captures the relevant texture characteristics of each brain region.
+Script: Binary_Matrix_and_start_descriptor.py
+Purpose: Converts brain segmentation DICOM or NIfTI files into binary matrices.
+Output: Binary matrix representing individual brain regions for further processing.
+Texture Feature Extraction:
 
-Once the texture feature matrix is generated, classification can be performed using either the Naive_Bayes_Classifier.py or SVM_Classifier.py. These classifiers apply machine learning techniques to categorize brain regions based on the extracted texture features.
+Script: Generate_Descriptor_Matrix.py
+Purpose: Extracts texture features from the binary matrices.
+Output: Descriptor matrix containing texture characteristics of each brain region.
+Classification:
 
-Finally, the Graph_results.py script is used for graph-based analysis of the classification results, enabling the visualization and interpretation of the outcomes in a structured manner.
+Scripts:
+Naive_Bayes_Classifier.py
+SVM_Classifier.py
+Purpose: Applies machine learning techniques to classify brain regions using the texture features.
+Results Analysis and Visualization:
 
-
+Script: Graph_results.py
+Purpose: Performs graph-based analysis and visualizes classification outcomes.
+Output: Structured and interpretable visualization of classification results.
 
 ### Loading Models
 
