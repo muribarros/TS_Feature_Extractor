@@ -37,13 +37,9 @@ This repository is licensed under the MIT License.
 The citation will be updated once this paper is published. Our citation template is:
 
 ```vbnet
-@article{TS_costa2024,
-  title={Enhancing Tourette's Syndrome Classification via Cortico-Striatal-Thalamic-Cortical Circuit Segmentation and Convolutional Neural Networks},
-  author={Murilo C. de Barros, Kaue T. N. Duarte, Chia-Jui Hsu, Wang-Tso Lee, Marco A. G. de Carvalho},
-  journal={IEEE Latin America},
-  year={2024},
-  volume={NA},
-  pages={NA},
-  doi={NA}
+@inproceedings{de2022detecting,
+  title={Detecting Tourette's Syndrome in Anatomical Regions of the Brain through MRI Analysis and Naive Bayes Classifier.},
+  author={De Barros, Murilo Costa and Duarte, Kau{\^e} Tartarotti Nepomuceno and Lee, Wang-Tso and Hsu, Chia-Jui and De Carvalho, Marco Antonio Garcia},
+  year={2022}
 }
 ```
