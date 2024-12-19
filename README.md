@@ -41,8 +41,9 @@ To use these models for feature extraction or classify, please follow the instru
 ### Loading Models
 
 ## Running the Script
-Ensure you have Sklearn installed: 
+Ensure you have Sklearn and pyradiomics installed: 
 - `pip install scikit-learn`
+- `pip install pyradiomics`
 - `SVM: pip install svm`
 - `NB: pip install naive-bayes`
 
