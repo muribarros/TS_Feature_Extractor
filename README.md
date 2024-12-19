@@ -1,7 +1,7 @@
-# Detecting Tourette’s Syndrome in Anatomical Regions of the Brain through MRI Analysis and Naive Bayes Classifier
+# Feature extraction in medical image for classify Patients with Tourettes Syndrome
 
 ## Purpose
-This repository contains the trained models and scripts used for our paper titled "Detecting Tourette’s Syndrome in Anatomical Regions of the Brain through MRI Analysis and Naive Bayes Classifier". Our work focuses on utilizing texture feature to classify Tourette's Syndrome using classfication via machine learning (ML).
+This repository contains the trained models and scripts used for our paper titled "Detecting Tourette’s Syndrome in Anatomical Regions of the Brain through MRI Analysis and Naive Bayes Classifier" and "Adding Dimensionality Reduction analysis of Texture descriptors for Tourette’s Syndrome classification". Our work focuses on utilizing texture feature to classify Tourette's Syndrome using classfication via machine learning (ML).
 
 ## Directory Structure
 - `models/`
