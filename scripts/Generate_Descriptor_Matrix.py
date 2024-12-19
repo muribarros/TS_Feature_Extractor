@@ -1,31 +1,31 @@
 #-------------------------------------//--------------------------------------
-#                          GERAR MATRIZ DE REGIÕES
+#                         REGION MATRIX GENERATION
 #-------------------------------------//--------------------------------------
 
 import numpy as np
 
 
-regioes = np.load('Lista_final_interseccao.npy')    
+regions = np.load('final_intersection_list.npy')    
 
 #--------------------------------------------------
 #LISTA A PARTIR DE UM TXT
 #--------------------------------------------------
 
-with open('lista_registro.txt', 'r') as f:
-    pacientes = [[str(entry) 
+with open('register_list.txt', 'r') as f:
+    patients = [[str(entry) 
                   for entry in line.split()] 
                  for line in f.readlines()]
     print(pacientes)
    
     
 #--------------------------------------------------
-# CONDIÇÃO (Todos os pacientes em todas as regiões 
+# Condition (All patients in all regions 
 #--------------------------------------------------
 
 
-for regiao in regioes:
+for region in regions:
     
-    for it, paciente in list(enumerate(pacientes)):
+    for it, patient in list(enumerate(patients)):
         a = np.load('/Users/Lab/Documents/Murilo/glrlm_RMs/' + paciente[0] + '/region_' + str(regiao) + '.npy')
         
         if it == 0:
@@ -38,5 +38,5 @@ for regiao in regioes:
     np.save('/Users/Lab/Documents/Murilo/glrlm_RMs_Matriz/Matriz_' + str(regiao), matriz)
 
 # =============================================================================
-#                            GERAR MATRIZ DE REGIÕES
+#                          REGION MATRIX GENERATION
 # =============================================================================
