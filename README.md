@@ -18,10 +18,16 @@ The descriptors provided in this repository are named as follows:
 
 ## Usage
 To use these models for feature extraction or classify, please follow the instructions below.
-1) Apply Binary_Matrix_and_start_descriptor.py algoritm to create binary matrix via dicom file or nifti file of brain segmentation, this process will results in binary matrix for each brain region for feature extraction in next step.
-2) Apply Generate_Descriptor_Matrix.py this code received the results binary matrix genered for Binary_Matrix_and_start_descriptor.py code to texture feature extraction.
-3) Next texture feature matrix finaly we can apply the classify by Naive_Bayes_Classifier.py or SVM_Classifier.py
-4) Graph analising by Graph_results.py
+
+The algorithm Binary_Matrix_and_start_descriptor.py is employed to generate a binary matrix from a brain segmentation DICOM or NIfTI file. This process results in a binary matrix representing individual brain regions, which can be used for feature extraction in subsequent steps.
+
+Following this, the Generate_Descriptor_Matrix.py script is applied to the binary matrices produced by the previous step. This script performs texture feature extraction from the binary matrices, creating a descriptor matrix that captures the relevant texture characteristics of each brain region.
+
+Once the texture feature matrix is generated, classification can be performed using either the Naive_Bayes_Classifier.py or SVM_Classifier.py. These classifiers apply machine learning techniques to categorize brain regions based on the extracted texture features.
+
+Finally, the Graph_results.py script is used for graph-based analysis of the classification results, enabling the visualization and interpretation of the outcomes in a structured manner.
+
+
 
 ### Loading Models
 
