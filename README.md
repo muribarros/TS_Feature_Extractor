@@ -30,12 +30,11 @@ To use these models for feature extraction or classify, please follow the instru
   -  Output: Descriptor matrix containing texture characteristics of each brain region.
 
 - `Classification:/`
-  -  Scripts:
-  -  Naive_Bayes_Classifier.py or VM_Classifier.py
+  -  Scripts: Naive_Bayes_Classifier.py or VM_Classifier.py
   -  Purpose: Applies machine learning techniques to classify brain regions using the texture features.
 
 - `Results Analysis and Visualization:/`
-  -  Script: Graph_results.py-
+  -  Script: Graph_results.py
   -  Purpose: Performs graph-based analysis and visualizes classification outcomes.
   -  Output: Structured and interpretable visualization of classification results.
 
