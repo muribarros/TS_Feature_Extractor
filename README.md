@@ -17,7 +17,10 @@ The descriptors provided in this repository are named as follows:
 - Neighbouring Gray Tone Difference Matrix (NGDTM)
 
 ## Usage
-To use these models for transfer learning or inference, please follow the instructions below.
+To use these models for feature extraction or classify, please follow the instructions below.
+1) Apply Binary_Matrix_and_start_descriptor.py algoritm to create binary matrix via dicom file or nifti file of brain segmentation, this process will results in binary matrix for each brain region for feature extraction in next step.
+2) Apply 
+
 
 ### Loading Models
 
@@ -34,12 +37,23 @@ This repository is licensed under the MIT License.
 
 ## Citation
 
-The citation will be updated once this paper is published. Our citation template is:
+The citation will be updated once this paper is published. Our citation template is [1] for Naive Bayes classify and [2] SVM classify:
 
 ```vbnet
-@inproceedings{de2022detecting,
+[1] @inproceedings{de2022detecting,
   title={Detecting Tourette's Syndrome in Anatomical Regions of the Brain through MRI Analysis and Naive Bayes Classifier.},
   author={De Barros, Murilo Costa and Duarte, Kau{\^e} Tartarotti Nepomuceno and Lee, Wang-Tso and Hsu, Chia-Jui and De Carvalho, Marco Antonio Garcia},
   year={2022}
+}
+
+[2] @article{de2024adding,
+  title={Adding Dimensionality Reduction analysis of Texture descriptors for Tourette’s Syndrome classification},
+  author={de Barros, Murilo Costa and Duarte, Kau{\^e} Tartarotti Nepomuceno and Lee, Wang-Tso and Hsu, Chia-Jui and de Carvalho, Marco Antonio Garcia},
+  journal={SN Computer Science},
+  volume={5},
+  number={6},
+  pages={775},
+  year={2024},
+  publisher={Springer}
 }
 ```
