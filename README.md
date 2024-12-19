@@ -42,10 +42,11 @@ To use these models for feature extraction or classify, please follow the instru
 ### Loading Models
 
 ## Running the Script
-Ensure you have Sklearn installed: pip install scikit-learn
+Ensure you have Sklearn installed: 
+- `pip install scikit-learn`
 - `SVM: pip install svm`
 - `NB: pip install naive-bayes`
-- 
+
 ## License
 
 This repository is licensed under the MIT License.
