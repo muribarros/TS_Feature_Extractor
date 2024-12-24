@@ -3,6 +3,8 @@
 ## Purpose
 This repository contains the trained models and scripts used for our paper titled "Detecting Tourette’s Syndrome in Anatomical Regions of the Brain through MRI Analysis and Naive Bayes Classifier" and "Adding Dimensionality Reduction analysis of Texture descriptors for Tourette’s Syndrome classification". Our work focuses on utilizing texture feature using classfication via machine learning (ML).
 
+![Workfl](https://github.com/user-attachments/assets/73867053-04c7-4581-8dab-4ab0ab87c07f)
+
 ## Directory Structure
 - `models/`
   - Contains the Generate descriptor Matrix, descriptor and classify models for two different architectures: 'Support Vector Machine(SVM)' and 'Navie Bayes(NB)'.
