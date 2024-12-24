@@ -38,8 +38,6 @@ To use these models for feature extraction or classify, please follow the instru
   -  Purpose: Performs graph-based analysis and visualizes classification outcomes.
   -  Output: Structured and interpretable visualization of classification results.
 
-### Loading Models
-
 ## Running the Script
 Ensure you have Sklearn and pyradiomics installed: 
 - `pip install scikit-learn`
